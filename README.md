@@ -102,16 +102,13 @@ Silver (Cleaned & Standardized)
 ↓
 Gold (Aggregated & Analytics)
 
-yaml
-Copiar código
-
 **Important concept:**  
 > Bronze, Silver, and Gold are **data states**, not just folders.
 
 ---
 
 ### Project Folder Structure
-
+```
 heart-disease-etl/
 │
 ├── data/
@@ -129,9 +126,7 @@ heart-disease-etl/
 │
 ├── docs/
 └── README.md
-
-yaml
-Copiar código
+```
 
 **Best Practice:**  
 If the `/data` folder is deleted, the project **should still work**, since data can always be re-ingested.
@@ -219,7 +214,10 @@ This simulates a real database environment safely and locally.
 - Pandas + SQLAlchemy handle the insertion
 - This completes the **core ETL pipeline**
 
-<!-- PLACE IMAGE OF heart_disease TABLE HERE -->
+<p align="center">
+  <img src="assets\Screenshot_1.png" alt="table" width="600">
+</p>
+
 
 ---
 
@@ -230,56 +228,46 @@ This simulates a real database environment safely and locally.
 - Aggregations are computed in Python
 - A new table is created in MySQL
 
-Example Gold table:
-
-heart_disease_by_sex
-
-yaml
-Copiar código
+Example Gold table: heart_disease_by_sex
 
 | sex | total_patients | total_with_disease | percentage_with_disease |
 |-----|----------------|--------------------|-------------------------|
 
 This table is optimized for **BI tools, dashboards, and reporting**.
 
-<!-- PLACE IMAGE OF heart_disease_by_sex TABLE HERE -->
-
+<p align="center">
+  <img src="assets\image.png" alt="table" width="600">
+</p>
 ---
 
 ## How to Run the Project
 
 1. Start the database:
-   ```bash
+   ```
    docker compose up -d
+   ```
 Install dependencies:
-
-bash
-Copiar código
+```
 pip install pandas sqlalchemy mysql-connector-python
-Run scripts in order:
 
+```
+
+Run scripts in order:
+```
 src/extract
 
 src/transform
 
 src/load
-
+```
 Results and Analysis
-Clean patient-level data stored in MySQL
 
-Analytical Gold table summarizing heart disease by sex
+- Clean patient-level data stored in MySQL
 
-Data is ready for visualization tools like Power BI or Metabase
+- Analytical Gold table summarizing heart disease by sex
 
-Future Improvements
-Add incremental loads
+- Data is ready for visualization tools like Power BI or Metabase
 
-Introduce primary keys and constraints
-
-Use dbt for transformations
-
-Orchestrate with Airflow
-
-Move storage to cloud (S3 + RDS)
-
-Build dashboards on top of Gold tables
+```
+tchau :)
+```
