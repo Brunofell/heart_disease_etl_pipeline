@@ -30,7 +30,7 @@ The goal is to ingest a real-world medical dataset, apply data cleaning and tran
    - [Step 7 – Load (Silver to MySQL)](#step-7--load-silver-to-mysql)
    - [Step 8 – Gold Layer (Analytics)](#step-8--gold-layer-analytics)
 6. [How to Run the Project](#how-to-run-the-project)
-7. [Results and Analysis](#results-and-analysis)
+
 
 
 ---
@@ -260,7 +260,7 @@ src/transform
 
 src/load
 ```
-Results and Analysis
+## Results and Analysis
 
 - Clean patient-level data stored in MySQL
 
